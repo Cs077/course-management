@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+ <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/login-pg.css">
+    <title>Interactive Platform</title>
+</head>
+<body>
+		
+<div class="container">
+    <div class="form-container">
+        <h2>Welcome to the Interactive Platform</h2>
+        <div class="tabs">
+            <button id="studentTab" onclick="showForm('studentForm')">Student</button>
+            <button id="instructorTab" onclick="showForm('instructorForm')">Instructor</button>
+        </div>
+
+        
+        <div id="studentForm" class="form">
+            <form action="signup_controller" method="post">
+                <label for="studentUsername">Username:</label>
+                <input type="text" id="studentUsername" name="studentUsername" required>
+
+                <label for="studentPassword">Password:</label>
+                <input type="password" id="studentPassword" name="studentPassword" required>
+
+                <button type="submit">Login as Student</button>
+            </form>
+        </div>
+        
+        
+        <div id="instructorForm" class="form">
+            <form action="signup_controller" method="post">
+                <label for="instructorUsername">Username:</label>
+                <input type="text" id="instructorUsername" name="instructorUsername" required>
+
+                <label for="instructorPassword">Password:</label>
+                <input type="password" id="instructorPassword" name="instructorPassword" required>
+             
+				    <a  href="./e-learn.html" style="
+	 background-color: #4caf50;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;">login</a>
+
+				  
+			
+
+            </form>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+<script src="script.js"></script>
+<script>
+    function showForm(formId) {
+    // Hide all forms
+    var forms = document.querySelectorAll('.form');
+    forms.forEach(function (form) {
+        form.style.display = 'none';
+    });
+
+    // Show the selected form
+    var selectedForm = document.getElementById(formId);
+    if (selectedForm) {
+        selectedForm.style.display = 'block';
+    }
+}
+
+// Initially show the student form
+showForm('studentForm');
+
+
+</script>
+</body>
+</html>
